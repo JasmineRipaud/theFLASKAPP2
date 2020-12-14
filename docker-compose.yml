@@ -1,0 +1,14 @@
+version : "3"
+services:
+	flaskapp:
+		build: .
+		depends_on:
+			-db
+		ports:
+			-5000
+	db:
+		image: "postgres"
+		environment:
+			-POSTGRES_PASSWORD=hello0ow
+			-POSTGRES_USER=theNamesFrodo
+			-POSTGRES_DB=DatIsADB
